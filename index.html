@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>El Vocero del Balón | Periódico Deportivo</title>
+    
+    <link rel="stylesheet" href="bootstrap.min.css">
+
+    <style>
+        /* --- ASIGNACIÓN DE LOS 2 TIPOS DE LETRA --- */
+        .fuente-editorial {
+            font-family: 'Georgia', 'Times New Roman', Times, serif;
+            font-weight: bold;
+        }
+
+        .fuente-moderna {
+            font-family: 'Arial', 'Helvetica', sans-serif;
+        }
+
+        /* --- PALETA DE COLORES Y ESTILO PERIÓDICO --- */
+        body {
+            background-color: #fcfbf9; 
+            color: #1a1a1a;
+        }
+
+        .header-periodico {
+            border-bottom: 4px double #1a1a1a;
+            border-top: 4px double #1a1a1a;
+            padding: 1.5rem 0;
+            background-color: #fcfbf9;
+        }
+
+        .fecha-linea {
+            border-bottom: 1px solid #1a1a1a;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        /* Secciones de Color */
+        .badge-roja {
+            background-color: #b30000;
+            color: white;
+            font-size: 0.85rem;
+        }
+
+        .badge-espectaculos {
+            background-color: #6a1b9a;
+            color: white;
+            font-size: 0.85rem;
+        }
+
+        /* Imágenes del periódico (estilo crudo, sin bordes redondeados) */
+        .img-periodico {
+            width: 100%;
+            height: 200px;
+            object-fit: cover; /* Para que la imagen no se deforme */
+            border-bottom: 2px solid #1a1a1a;
+            margin-bottom: 15px;
+        }
+
+        /* --- MOVIMIENTO --- */
+        .ticker-wrap {
+            width: 100%;
+            overflow: hidden;
+            background-color: #1a1a1a;
+            color: #ffc107;
+            padding: 8px 0;
+        }
+
+        .ticker {
+            display: inline-block;
+            white-space: nowrap;
+            padding-left: 100%;
+            animation: ticker-movimiento 25s linear infinite;
+        }
+
+        @keyframes ticker-movimiento {
+            0% { transform: translate3d(0, 0, 0); }
+            100% { transform: translate3d(-100%, 0, 0); }
+        }
+
+        .noticia-card {
+            background-color: #ffffff;
+            border: 1px solid #e0e0e0;
+            border-radius: 0px; 
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+            height: 100%;
+        }
+
+        .noticia-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 20px rgba(0,0,0,0.15);
+            border-color: #999;
+        }
+
+        .linea-separadora {
+            border-right: 1px solid #e0e0e0;
+        }
+
+        @media (max-width: 768px) {
+            .linea-separadora { border-right: none; border-bottom: 1px solid #e0e0e0; padding-bottom: 1rem; }
+        }
+    </style>
+</head>
+<body class="fuente-moderna">
+
+    <div class="ticker-wrap fw-bold shadow-sm">
+        <div class="ticker">
+            🚨 ¡ÚLTIMA HORA! Mercado de fichajes cierra con sorpresas de último minuto... ⚽ Escándalo en el vestidor tras la derrota del clásico... 🏆 FIFA analiza cambios drásticos en el reglamento del VAR... 🔥 Delantero estrella captado en fiesta masiva previa a la gran final...
+        </div>
+    </div>
+
+    <div class="container my-4">
+        
+        <header class="text-center mb-4">
+            <h1 class="fuente-editorial display-1 my-2" style="letter-spacing: -2px;">EL VOCERO DEL BALÓN</h1>
+            <div class="fecha-linea d-flex justify-content-between px-2 py-1 fw-bold">
+                <div>Año XLVI • No. 16,402</div>
+                <div>México, Viernes de Estrenos Informativos</div>
+                <div>Precio: $15.00 MXN</div>
+            </div>
+        </header>
+
+        <div class="row mb-5">
+            <div class="col-12 mb-3">
+                <h2 class="fuente-editorial text-danger border-bottom border-danger pb-2" style="border-width: 3px !important;">
+                    🟥 SECCIÓN CRÓNICA ROJA <small class="text-muted fs-5 fuente-moderna">(Incidentes, Sanciones y Drama)</small>
+                </h2>
+            </div>
+
+            <div class="col-md-4 mb-4 linea-separadora">
+                <div class="card noticia-card p-3">
+                    <img src="jugador.jpg" alt="Jugador lesionado" class="img-periodico">
+                    <span class="badge badge-roja align-self-start mb-2 uppercase fw-bold">GRAVE LESIÓN</span>
+                    <h3 class="fuente-editorial h4 card-title text-dark">¡Fractura de terror en el derbi local! Expulsión directa y llanto en la cancha</h3>
+                    <p class="card-text text-muted small mt-2">Durante el último minuto del juego, una barrida imprudente dejó al mediocampista estrella fuera de la temporada. El cuerpo médico confirma traslado de emergencia al hospital.</p>
+                </div>
+            </div>
+
+            <div class="col-md-4 mb-4 linea-separadora">
+                <div class="card noticia-card p-3">
+                    <img src="aficionados.jpg" alt="Aficionados invadiendo la cancha" class="img-periodico">
+                    <span class="badge badge-roja align-self-start mb-2 uppercase fw-bold">INDIGNACIÓN</span>
+                    <h3 class="fuente-editorial h4 card-title text-dark">Afición enfurecida invade el terreno de juego tras polémico penal en el minuto 95</h3>
+                    <p class="card-text text-muted small mt-2">El silbante central tuvo que salir escoltado por el cuerpo antimotines después de que seguidores radicales rompieran las vallas de seguridad. Se anticipa un veto histórico para el estadio.</p>
+                </div>
+            </div>
+
+            <div class="col-md-4 mb-4">
+                <div class="card noticia-card p-3">
+                    <img src="tecnico.jpg" alt="Director Técnico furioso" class="img-periodico">
+                    <span class="badge badge-roja align-self-start mb-2 uppercase fw-bold">CAOS INTERNO</span>
+                    <h3 class="fuente-editorial h4 card-title text-dark">¡Renuncia en vivo! Director Técnico abandona al equipo en plena conferencia</h3>
+                    <p class="card-text text-muted small mt-2">Tras una fuerte discusión a gritos en el vestidor con la directiva, el estratega declaró: "No me voy a prestar a este circo", dejando el cargo botado a solo dos jornadas de iniciar la liguilla.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-12 mb-3">
+                <h2 class="fuente-editorial border-bottom pb-2" style="color: #6a1b9a; border-color: #6a1b9a !important; border-width: 3px !important;">
+                    🟪 FÚTBOL & GLAMOUR <small class="text-muted fs-5 fuente-moderna">(Espectáculos, Bodas y Estilo de Vida)</small>
+                </h2>
+            </div>
+
+            <div class="col-md-4 mb-4 linea-separadora">
+                <div class="card noticia-card p-3" style="border-top: 4px solid #6a1b9a;">
+                    <img src="anillo.jpg" alt="Anillo de compromiso" class="img-periodico">
+                    <span class="badge badge-espectaculos align-self-start mb-2 uppercase fw-bold">¡Paparazzi!</span>
+                    <h3 class="fuente-editorial h4 card-title text-dark">¿Anillo de compromiso? Delantero millonario es captado en lujosa joyería</h3>
+                    <p class="card-text text-muted small mt-2">Las alertas de boda se encendieron en Europa tras filtrarse imágenes del goleador junto a su pareja evaluando diamantes exclusivos de alta gama.</p>
+                </div>
+            </div>
+
+            <div class="col-md-4 mb-4 linea-separadora">
+                <div class="card noticia-card p-3" style="border-top: 4px solid #6a1b9a;">
+                    <img src="fiesta.jpg" alt="Fiesta de lujo" class="img-periodico">
+                    <span class="badge badge-espectaculos align-self-start mb-2 uppercase fw-bold">LA FIESTA DEL AÑO</span>
+                    <h3 class="fuente-editorial h4 card-title text-dark">Alfombra roja y estrellas de Hollywood: Así celebró el Capitán su cumpleaños</h3>
+                    <p class="card-text text-muted small mt-2">Con una temática estilo casino y una lista de invitados que incluyó cantantes de reggaetón y actores, el festejo paralizó la zona residencial hasta la madrugada.</p>
+                </div>
+            </div>
+
+            <div class="col-md-4 mb-4">
+                <div class="card noticia-card p-3" style="border-top: 4px solid #6a1b9a;">
+                    <img src="moda.jpg" alt="Jugador en pasarela de moda" class="img-periodico">
+                    <span class="badge badge-espectaculos align-self-start mb-2 uppercase fw-bold">NUEVA FACETA</span>
+                    <h3 class="fuente-editorial h4 card-title text-dark">De los tacos de juego a las pasarelas: Mediocampista debuta como diseñador</h3>
+                    <p class="card-text text-muted small mt-2">Sorprendiendo a expertos de la moda, el talentoso jugador presentó su primera colección de ropa urbana premium. Sus compañeros modelaron las piezas principales.</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <footer class="text-center py-4 bg-dark text-white mt-5 fuente-moderna">
+        <p class="mb-1 fw-bold">&copy; 2026 El Vocero del Balón S.A. de C.V.</p>
+        <p class="small text-white-50">Editor Responsable: Sección de Prácticas Profesionales. Información con fines académicos.</p>
+    </footer>
+
+    <script src="bootstrap.bundle.min.js"></script>
+</body>
+</html>
